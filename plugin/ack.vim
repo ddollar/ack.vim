@@ -11,7 +11,7 @@ let g:ackprg="ack\\ -H\\ --nocolor\\ --nogroup"
 function! Ack(args)
     let grepprg_bak=&grepprg
     exec "set grepprg=" . g:ackprg
-    execute "silent! grep " . a:args
+    execute "silent! grep \"" . a:args . "\""
     botright copen
     let &grepprg=grepprg_bak
     exec "redraw!"
